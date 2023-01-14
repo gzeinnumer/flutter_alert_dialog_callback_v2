@@ -3,7 +3,7 @@
 |<img src="/preview/preview1.png" width="300"/>|<img src="/preview/preview2.png" width="300"/>|<img src="/preview/preview3.png" width="300"/>|
 |--|--|--|
 
-```
+```dart
 void myCallBack(String data) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(data),
@@ -16,6 +16,14 @@ showDialog(
     myCallBack: myCallBack,
   ),
 );
+
+TextButton(
+  onPressed: () {
+    Navigator.pop(context);
+    myCallBack("data ${_editTextController.text}");
+  },
+  child: const Text('YES'),
+)
 ```
 
 Example
